@@ -274,4 +274,41 @@ npm run build:types # apenas as declarations (tsc)
 npm run build:css   # apenas o CSS (Tailwind)
 ```
 
+### Storybook
+
+Cada componente tem um arquivo `*.stories.tsx` ao lado do código-fonte
+(ex: `src/components/button.stories.tsx`), com as variações visuais e
+controles interativos das props.
+
+```bash
+npm run storybook         # sobe o Storybook em http://localhost:6006
+npm run build-storybook   # gera build estático em storybook-static/ (não versionado)
+```
+
+Ao criar um componente novo, crie também seu `*.stories.tsx` cobrindo os
+principais estados (variantes, disabled, erro, etc.).
+
+### Testes unitários
+
+Testes unitários usam [Vitest](https://vitest.dev) +
+[Testing Library](https://testing-library.com/react), em arquivos
+`*.test.tsx` ao lado do componente (ex: `src/components/button.test.tsx`).
+
+```bash
+npm run test           # roda os testes unitários uma vez
+npm run test:watch     # modo watch
+npm run test:coverage  # com relatório de cobertura
+```
+
+> `test:storybook` e `test:all` também existem e rodam as *stories* como
+> testes via Playwright (addon-vitest do Storybook) — mais lento, útil em CI
+> para checar que toda story renderiza sem erros e passa nos testes de
+> acessibilidade (a11y).
+
+Ao criar ou alterar um componente, adicione/atualize:
+1. o `*.stories.tsx` (visual, no Storybook)
+2. o `*.test.tsx` (comportamento, via Vitest)
+3. um changeset (`npm run changeset` na raiz do monorepo) — veja o
+   [README principal](../../README.md#versionamento-do-design-system)
+
 Este pacote foi gerado com [Nx](https://nx.dev).

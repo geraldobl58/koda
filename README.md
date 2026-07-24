@@ -35,6 +35,17 @@ npx nx build ui      # builda a lib ui (src/ -> dist/)
 npx nx <target> ui    # roda qualquer target definido em packages/ui/package.json
 ```
 
+Dentro de `packages/ui`, também temos:
+
+```sh
+npm run storybook   # Storybook em modo dev (http://localhost:6006)
+npm run test         # testes unitários (Vitest + Testing Library)
+npm run test:watch   # testes unitários em modo watch
+```
+
+Veja [packages/ui/README.md](packages/ui/README.md#storybook) para detalhes
+de Storybook e testes.
+
 ## Versionamento do design system
 
 Usamos [Changesets](https://github.com/changesets/changesets) para controlar a
