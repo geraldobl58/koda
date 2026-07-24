@@ -1,0 +1,52 @@
+@import "tailwindcss";
+
+/* ============================================
+   CAMADA 1+2 — TOKENS DO DESIGN SYSTEM
+   Tailwind v4 usa CSS puro para configuração
+   (não precisa mais de tailwind.config.js).
+   O @theme injeta esses nomes como classes
+   utilitárias automaticamente: bg-brand-500,
+   text-neutral-700, rounded-sm, etc.
+   ============================================ */
+@theme {
+  /* Cor — escala neutra */
+  --color-neutral-0: #ffffff;
+  --color-neutral-50: #f7f8f9;
+  --color-neutral-100: #eceef1;
+  --color-neutral-300: #c7ccd1;
+  --color-neutral-500: #8b9299;
+  --color-neutral-700: #4a5157;
+  --color-neutral-900: #1c2024;
+
+  /* Cor — marca */
+  --color-brand-100: #e8edfc;
+  --color-brand-500: #3457d5;
+  --color-brand-600: #2943ad;
+
+  /* Cor — feedback */
+  --color-danger-100: #fbe9e9;
+  --color-danger-500: #d1373f;
+
+  /* Tipografia */
+  --font-sans: -apple-system, "Segoe UI", Roboto, sans-serif;
+
+  /* Forma */
+  --radius-sm: 6px;
+  --radius-md: 8px;
+}
+
+/* Tokens semânticos que não viram classes utilitárias novas,
+   mas ficam disponíveis como CSS custom properties comuns —
+   úteis quando o app consumidor quer trocar de tema sem
+   reescrever a classe toda. */
+:root {
+  --ds-bg-surface: var(--color-neutral-0);
+  --ds-border-default: var(--color-neutral-300);
+  --ds-text-primary: var(--color-neutral-900);
+}
+
+[data-theme="dark"] {
+  --ds-bg-surface: var(--color-neutral-900);
+  --ds-border-default: var(--color-neutral-700);
+  --ds-text-primary: var(--color-neutral-0);
+}
