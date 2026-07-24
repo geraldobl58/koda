@@ -2,9 +2,14 @@
   "name": "@koda/source",
   "version": "0.0.1",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "changeset": "changeset",
+    "version-packages": "changeset version",
+    "release": "changeset publish"
+  },
   "private": true,
   "devDependencies": {
+    "@changesets/cli": "^2.31.1",
     "@nx/js": "23.1.0",
     "@swc/helpers": "~0.5.18",
     "@types/node": "^22.0.0",
